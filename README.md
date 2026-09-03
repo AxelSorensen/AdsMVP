@@ -19,6 +19,21 @@ cd AdsMVP
 npm install
 ```
 
+## Configuration
+
+Copy `.env.example` to `.env` and fill in the values:
+
+```bash
+cp .env.example .env
+```
+
+| Variable         | Used for                                                                 |
+| ---------------- | ------------------------------------------------------------------------- |
+| `OPENAI_API_KEY` | Authenticates OpenAI SDK calls in `/api/generate-campaign` and `server.ts` for AI campaign generation |
+| `PORT`           | Port for the standalone Express server in `server.ts` (defaults to 3001 if unset) |
+
+Without a real `OPENAI_API_KEY`, `server.ts` detects the placeholder value and the AI campaign-generation feature will not work, though the rest of the UI still renders.
+
 ## Usage
 
 ```bash
