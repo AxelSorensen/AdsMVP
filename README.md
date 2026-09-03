@@ -1,73 +1,40 @@
-# React + TypeScript + Vite
+# 📢 AdsMVP (Scouter Ads)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-assisted Google Ads campaign generator built on Next.js.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🤖 **AI campaign generation** — an `/api/generate-campaign` route uses the OpenAI/Vercel AI SDK to draft ad campaign content
+- 📊 **Google Ads integration** — wired up with `google-ads-api` for pulling or pushing campaign data
+- 🎨 **Modern UI** — React 19 + Tailwind-adjacent styling with `framer-motion` animations and `lucide-react` icons
+- 🌗 **Theming** — dark/light mode via `next-themes`
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <this repo>
+cd AdsMVP
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev        # start the Next.js dev server
+npm run dev:server  # run the standalone Express/ts-node server (server.ts)
+npm run dev:all     # run both together
 ```
+
+Then open [http://localhost:3000](http://localhost:3000).
+
+## Built with
+
+- [Next.js](https://nextjs.org/) 16 + React 19
+- [Express](https://expressjs.com/) (secondary server in `server.ts`)
+- [OpenAI SDK](https://github.com/openai/openai-node) / [Vercel AI SDK](https://sdk.vercel.ai/)
+- [google-ads-api](https://github.com/Opteo/google-ads-api)
+- Tailwind-merge, Framer Motion, Lucide icons
+
+## Status
+
+🚧 Early-stage MVP — the repo mixes a Vite/React scaffold (`src/`) with a newer Next.js app (`app/`), and the project has been renamed at least once ("Impact Ads" → "Scouter Ads"), suggesting it's still finding its shape.
