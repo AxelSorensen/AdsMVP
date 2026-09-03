@@ -2,6 +2,8 @@
 
 An AI-assisted Google Ads campaign generator built on Next.js.
 
+![AdsMVP screenshot](docs/screenshot.png)
+
 ## Features
 
 - 🤖 **AI campaign generation** — an `/api/generate-campaign` route uses the OpenAI/Vercel AI SDK to draft ad campaign content
