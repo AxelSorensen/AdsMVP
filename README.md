@@ -38,3 +38,5 @@ Then open [http://localhost:3000](http://localhost:3000).
 ## Status
 
 🚧 Early-stage MVP — the repo mixes a Vite/React scaffold (`src/`) with a newer Next.js app (`app/`), and the project has been renamed at least once ("Impact Ads" → "Scouter Ads"), suggesting it's still finding its shape.
+
+✅ Runs cleanly — `npm install`, `npm run build`, and `npm run dev` all verified working as of 2026-09-03 (dev server serves `/` with a 200). Requires your own OpenAI/Google Ads credentials in `.env` for the AI campaign-generation and Google Ads features to actually work at runtime.
